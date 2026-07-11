@@ -91,5 +91,16 @@
                 {{ end }}
             </ol>
         </li>
+
+        {{/* 悬挂时钟（复古挂件） */}}
+        <div class="retro-clock" aria-label="当前时间">
+            <span class="clock-face">
+                <span class="hand hour"></span>
+                <span class="hand minute"></span>
+                <span class="hand second"></span>
+                <span class="pin"></span>
+            </span>
+            <span class="clock-time"><b id="clock-text">--:--:--</b></span>
+        </div>
     </ol>
 </aside>

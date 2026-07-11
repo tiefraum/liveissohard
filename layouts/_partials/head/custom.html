@@ -29,6 +29,31 @@
     try { localStorage.setItem(key, n); } catch (e) {}
     var vc = document.getElementById("visitor-count");
     if (vc) vc.textContent = String(n).padStart(6, "0");
+
+    // 悬挂时钟：实时走针
+    function tick() {
+      var now = new Date();
+      var h = now.getHours() % 12;
+      var m = now.getMinutes();
+      var s = now.getSeconds();
+      var ht = h * 30 + m * 0.5;
+      var mt = m * 6 + s * 0.1;
+      var st = s * 6;
+      var set = function (sel, deg) {
+        var el = document.querySelector(sel);
+        if (el) el.style.transform = "rotate(" + deg + "deg)";
+      };
+      set(".retro-clock .hand.hour", ht);
+      set(".retro-clock .hand.minute", mt);
+      set(".retro-clock .hand.second", st);
+      var ct = document.getElementById("clock-text");
+      if (ct) {
+        var p = function (x) { return String(x).padStart(2, "0"); };
+        ct.textContent = p(now.getHours()) + ":" + p(m) + ":" + p(s);
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
   });
 </script>
 

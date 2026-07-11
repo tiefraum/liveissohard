@@ -1,15 +1,15 @@
-/* ===== 蒸汽波 / 复古优雅 配色（抹茶巧克力为底的做旧版） ===== */
+/* ===== 森系抹茶绿 + 复古优雅（绿主题 + 纸张质感） ===== */
 :root {
-  --accent-color: #8a7b9e;          /* 主色：雾紫（蒸汽波灵魂色） */
-  --accent-color-2: #c9a3b5;        /* 浅粉紫点缀 */
+  --accent-color: #6f9c84;          /* 主色：柔和抹茶绿（贴近背景青绿调） */
+  --accent-color-2: #9cc2b0;        /* 浅抹茶点缀 */
   --body-background: #f3f9f7;        /* 背景：极浅绿白（保留） */
-  --paper-overlay: #f6efe2;          /* 纸张暖色叠加 */
-  --card-background: #fffaf2;        /* 卡片：旧纸米白 */
-  --card-background-selected: #efe6d6;
-  --heading-color: #4a3b4a;          /* 标题：做旧紫褐 */
-  --text-color: #5b4d4a;             /* 正文：暖褐 */
-  --link-color: #9c6b8e;             /* 链接：莓紫 */
-  --border-color: #e0d6c8;           /* 边框：淡可可 */
+  --paper-overlay: #f4f8f5;          /* 纸张暖绿叠加 */
+  --card-background: #fffdf8;        /* 卡片：奶油米白 */
+  --card-background-selected: #e6efe9;
+  --heading-color: #3a4a3f;          /* 标题：深森绿 */
+  --text-color: #4a534c;             /* 正文：墨绿灰 */
+  --link-color: #5b8a72;             /* 链接：森绿 */
+  --border-color: #dfeae4;           /* 边框：与背景同调的淡绿 */
   --vapor-pink: #d8a7c4;
   --vapor-cyan: #9cc2c2;
   --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
@@ -18,15 +18,15 @@
 }
 
 [data-scheme="dark"] {
-  --accent-color: #b3a0c9;
-  --accent-color-2: #c9a3b5;
+  --accent-color: #8fbfa6;
+  --accent-color-2: #6f9c84;
   --body-background: #11201d;
   --paper-overlay: #16201f;
-  --card-background: #1d2320;
-  --card-background-selected: #28302b;
-  --heading-color: #e7dfe8;
+  --card-background: #1c2622;
+  --card-background-selected: #243330;
+  --heading-color: #e7efea;
   --text-color: #cdc4c0;
-  --link-color: #cba3c0;
+  --link-color: #8fbfa6;
   --border-color: #2c3a36;
   --vapor-pink: #b388a8;
   --vapor-cyan: #7fa8a8;
@@ -144,6 +144,98 @@ a:hover { color: var(--accent-color); }
   border-color: var(--accent-color);
 }
 
+/* ===== 博文正文：舒适阅读字体 ===== */
+.article-content {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+}
+.article-content p,
+.article-content li {
+  margin-bottom: 1.1rem;
+}
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  font-family: var(--font-display);
+  color: var(--heading-color);
+  margin-top: 2rem;
+}
+.article-content a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===== 悬挂时钟（复古小挂件） ===== */
+.retro-clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 1.4rem auto 0;
+  font-family: var(--font-display);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+.retro-clock .clock-face {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  position: relative;
+  background: var(--card-background);
+  box-shadow: 0 1px 6px rgba(111,156,132,0.2);
+  flex: none;
+}
+.retro-clock .clock-face .hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+.retro-clock .clock-face .hand.hour {
+  width: 2px;
+  height: 12px;
+  margin-left: -1px;
+}
+.retro-clock .clock-face .hand.minute {
+  width: 2px;
+  height: 17px;
+  margin-left: -1px;
+}
+.retro-clock .clock-face .hand.second {
+  width: 1px;
+  height: 19px;
+  margin-left: -0.5px;
+  background: var(--vapor-pink);
+}
+.retro-clock .clock-face .pin {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 4px; height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+.retro-clock .clock-time b {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* ===== 文章底部 tags 缩小 ===== */
+.article-tags a {
+  font-size: 0.8rem !important;
+  padding: 3px 10px !important;
+  border-radius: 3px;
+}
+
 /* ===== 首页卷首语（intro） ===== */
 .site-intro {
   font-family: var(--font-serif);
@@ -153,7 +245,7 @@ a:hover { color: var(--accent-color); }
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
   background:
-    linear-gradient(180deg, rgba(216,167,196,0.05), rgba(156,194,194,0.05));
+    linear-gradient(180deg, rgba(111,156,132,0.06), rgba(156,194,194,0.05));
 }
 .site-intro .intro-quote {
   font-family: var(--font-hand);

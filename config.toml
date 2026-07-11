@@ -22,10 +22,9 @@ theme = "hugo-theme-stack"
             {type = "archives"},
             {type = "tag-cloud", params = {limit = 10}},
         ]
-        # 文章页右栏：目录 + 标签云
+        # 文章页右栏：仅目录。无目录时右栏自动消失（中间栏占满）
         page = [
             {type = "toc"},
-            {type = "tag-cloud", params = {limit = 10}},
         ]
 
     # 文章：开启目录、摘要
