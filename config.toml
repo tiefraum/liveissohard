@@ -20,15 +20,12 @@ theme = "hugo-theme-stack"
 [params.sidebar]
     emoji = "🗂️"
     subtitle = "ケーキも大好き、君も大好き"
+    avatar = "img/avatar.png"
 
 [params.colorScheme]
     toggle = true
     default = "auto"
 
-    [params.sidebar.avatar]
-    enabled = true
-    local = true
-    src = "img/avatar.png"
 
 [params.author]
     name = "336"
