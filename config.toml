@@ -5,7 +5,8 @@ DefaultContentLanguage = "zh-cn"
 theme = "hugo-theme-stack"
 
 # 强制开启文章目录和分页
-paginate = 5
+[pagination]
+    pagerSize = 5
 
 [params]
     # 网站的主标题和副标题
