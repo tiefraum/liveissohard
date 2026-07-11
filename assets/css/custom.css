@@ -1,0 +1,59 @@
+/* ===== 清爽蓝绿 / 森系配色 ===== */
+:root {
+  --accent-color: #2a9d8f;          /* 主色：森系蓝绿 */
+  --accent-color-2: #88c9bf;         /* 浅绿点缀 */
+  --body-background: #f3f9f7;        /* 背景：极浅绿白 */
+  --card-background: #ffffff;
+  --card-background-selected: #e8f4f1;
+  --heading-color: #1d3b36;
+  --text-color: #2c3e3a;
+  --link-color: #2a9d8f;
+  --border-color: #d8ebe6;
+}
+
+[data-scheme="dark"] {
+  --accent-color: #4cc9b0;
+  --accent-color-2: #2a9d8f;
+  --body-background: #11201d;
+  --card-background: #16291f;
+  --card-background-selected: #1d3b36;
+  --heading-color: #e6f4f0;
+  --text-color: #cfe3dc;
+  --link-color: #4cc9b0;
+  --border-color: #244039;
+}
+
+/* 链接 hover 用主色 */
+a:hover { color: var(--accent-color); }
+
+/* 圆角 + 柔和阴影，更清爽 */
+.article-list--compact article,
+.article,
+.widget,
+.widget--card {
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(42, 157, 143, 0.08);
+  border-color: var(--border-color);
+}
+
+/* 文章顶部主色细线 */
+.article-page .main-article {
+  border-top: 3px solid var(--accent-color);
+}
+
+/* 侧边栏头像圆形 + 主色描边 */
+.sidebar .avatar img {
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.18);
+}
+
+/* TOC 高亮用主色 */
+.toc-nav a.active {
+  color: var(--accent-color);
+  border-left-color: var(--accent-color);
+}
+
+/* 搜索框聚焦主色 */
+.search-input:focus {
+  border-color: var(--accent-color);
+}

@@ -1,0 +1,8 @@
+{{ with .Site.Params.customCSS }}
+    {{ range . }}
+        {{ with resources.Get . }}
+            {{ $css := . | minify | fingerprint }}
+            <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+        {{ end }}
+    {{ end }}
+{{ end }}

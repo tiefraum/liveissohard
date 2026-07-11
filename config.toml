@@ -11,6 +11,46 @@ theme = "hugo-theme-stack"
 [params]
     mainSection = "post"
     description = "这里是我的数字自留地。"
+    customCSS = ["css/custom.css"]
+
+    # 侧边栏小工具：搜索 / 标签云 / 分类 / 归档
+    [params.widgets]
+        sidebar = ["search", "tag-cloud", "categories", "archives"]
+        # 文章页右侧：目录
+        [params.widgets.page]
+            [params.widgets.page.toc]
+                enabled = true
+            [params.widgets.page.recent]
+                enabled = false
+
+    # 文章：开启目录、摘要
+    [params.article]
+        toc = true
+        showSummary = true
+
+    # 搜索（Stack 内置前端搜索，需要 JSON 输出）
+    [params.search]
+        enable = true
+        placeholder = "搜索文章…"
+
+    # 评论：Giscus（需先在 GitHub 仓库开启 Discussions 并安装 Giscus App）
+    [params.comments]
+        enabled = true
+        provider = "giscus"
+        [params.comments.giscus]
+            repo = "tiefraum/liveissohard"
+            repoID = "R_kgDOTVOxIQ"
+            category = "Announcements"
+            categoryID = "DIC_kwDOTVOxIc4DA-ub"
+            mapping = "pathname"
+            strict = "1"
+            reactionsEnabled = "1"
+            emitMetadata = "0"
+            inputPosition = "top"
+            lightTheme = "light"
+            darkTheme = "dark"
+            lang = "zh-CN"
+            loading = "lazy"
 
 # 修复报错的核心：新版日期配置组合
 [params.dateFormat]
@@ -18,7 +58,7 @@ theme = "hugo-theme-stack"
     lastUpdated = "2006-01-02 15:04"
 
 [params.sidebar]
-    emoji = "🗂️"
+    emoji = "🌿"
     subtitle = "ケーキも大好き、君も大好き"
     avatar = "img/avatar.png"
 
@@ -30,3 +70,25 @@ theme = "hugo-theme-stack"
 [params.author]
     name = "336"
     intro = "日啖网友三百个"
+
+# 搜索索引需要 JSON 输出
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+# 顶部导航菜单
+[[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+[[menu.main]]
+    name = "分类"
+    url = "/categories/"
+    weight = 3
+[[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 4
