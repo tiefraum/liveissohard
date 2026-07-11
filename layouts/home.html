@@ -1,0 +1,33 @@
+{{ define "main" }}
+    {{- $paginator := partial "helper/paginator.html" . -}}
+
+    {{ with .Site.Params.profile.intro }}
+    <section class="site-intro">
+        <p class="intro-quote">{{ . }}</p>
+        {{ with $.Site.Params.profile.introSub }}
+        <p class="intro-sub">{{ . }}</p>
+        {{ end }}
+    </section>
+    {{ end }}
+
+    <section class="article-list">
+        {{ range $index, $element := $paginator.Pages }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "pagination.html" . -}}
+
+    {{/* 复古小挂件：运行天数 + 访客计数（纯前端趣味组件） */}}
+    <div class="retro-widgets">
+        <span class="retro-badge"><span class="dot"></span>已运行 <b id="run-days">—</b> 天</span>
+        <span class="retro-badge">您是第 <b id="visitor-count">000000</b> 位访客</span>
+        <span class="retro-badge">由 <b>Hugo</b> 驱动</span>
+    </div>
+
+    {{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

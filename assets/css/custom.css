@@ -1,39 +1,125 @@
-/* ===== 抹茶巧克力配色（背景绿保留不动） ===== */
+/* ===== 蒸汽波 / 复古优雅 配色（抹茶巧克力为底的做旧版） ===== */
 :root {
-  --accent-color: #6f9c84;          /* 主色：柔和抹茶绿（贴近背景青绿调） */
-  --accent-color-2: #9cc2b0;        /* 浅抹茶点缀 */
+  --accent-color: #8a7b9e;          /* 主色：雾紫（蒸汽波灵魂色） */
+  --accent-color-2: #c9a3b5;        /* 浅粉紫点缀 */
   --body-background: #f3f9f7;        /* 背景：极浅绿白（保留） */
-  --card-background: #fffdf8;        /* 卡片：奶油米白 */
-  --card-background-selected: #e6efe9; /* 选中：浅抹茶奶 */
-  --heading-color: #4a3b2a;          /* 标题：巧克力棕 */
-  --text-color: #5b4d3a;             /* 正文：暖棕 */
-  --link-color: #8a6d3b;             /* 链接：焦糖棕 */
-  --border-color: #dfeae4;           /* 边框：与背景同调的淡绿 */
+  --paper-overlay: #f6efe2;          /* 纸张暖色叠加 */
+  --card-background: #fffaf2;        /* 卡片：旧纸米白 */
+  --card-background-selected: #efe6d6;
+  --heading-color: #4a3b4a;          /* 标题：做旧紫褐 */
+  --text-color: #5b4d4a;             /* 正文：暖褐 */
+  --link-color: #9c6b8e;             /* 链接：莓紫 */
+  --border-color: #e0d6c8;           /* 边框：淡可可 */
+  --vapor-pink: #d8a7c4;
+  --vapor-cyan: #9cc2c2;
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-display: "Cormorant Garamond", "Noto Serif SC", serif;
+  --font-hand: "Ma Shan Zheng", "Noto Serif SC", cursive;
 }
 
 [data-scheme="dark"] {
-  --accent-color: #8fbfa6;           /* 暗色：亮抹茶绿 */
-  --accent-color-2: #6f9c84;
-  --body-background: #11201d;        /* 背景绿（保留） */
-  --card-background: #1c2622;        /* 卡片：深可可绿 */
-  --card-background-selected: #243330;
-  --heading-color: #e7e0cf;          /* 标题：奶茶白 */
-  --text-color: #cdc4b0;             /* 正文：暖灰棕 */
-  --link-color: #c8a878;             /* 链接：焦糖 */
+  --accent-color: #b3a0c9;
+  --accent-color-2: #c9a3b5;
+  --body-background: #11201d;
+  --paper-overlay: #16201f;
+  --card-background: #1d2320;
+  --card-background-selected: #28302b;
+  --heading-color: #e7dfe8;
+  --text-color: #cdc4c0;
+  --link-color: #cba3c0;
   --border-color: #2c3a36;
+  --vapor-pink: #b388a8;
+  --vapor-cyan: #7fa8a8;
+  --font-serif: "Noto Serif SC", "Songti SC", serif;
+  --font-display: "Cormorant Garamond", "Noto Serif SC", serif;
+  --font-hand: "Ma Shan Zheng", "Noto Serif SC", cursive;
+}
+
+/* ===== 全局字体：衬线，复古优雅 ===== */
+body {
+  font-family: var(--font-serif);
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.site-name,
+.article-title,
+.widget-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ===== 纸张纹理 + 暖色渐变（旧书页感） ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* 细噪点 + 暖色渐变叠加 */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(216, 167, 196, 0.06), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(156, 194, 194, 0.06), transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-color: var(--paper-overlay);
+  background-blend-mode: multiply;
 }
 
 /* 链接 hover 用主色 */
 a:hover { color: var(--accent-color); }
 
-/* 圆角 + 柔和阴影，抹茶感 */
+/* 文章列表/正文卡片：圆角 + 柔和阴影 + 米白纸感 */
 .article-list--compact article,
-.article,
-.widget,
-.widget--card {
-  border-radius: 14px;
-  box-shadow: 0 2px 14px rgba(111, 156, 132, 0.14);
-  border-color: var(--border-color);
+.article {
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(138, 123, 158, 0.12);
+  border: 1px solid var(--border-color);
+  background: var(--card-background);
+}
+
+/* ===== 右侧栏：扁平化，去掉大圆角背景块 ===== */
+.right-sidebar .widget,
+.right-sidebar .widget--card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* 分区标题：优雅衬线 + 双线分隔（复古） */
+.right-sidebar .widget-title,
+.right-sidebar .widget--card .widget-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--heading-color);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.4rem;
+  letter-spacing: 0.06em;
+}
+
+/* ===== 标签云：做成复古徽章/邮票样式 ===== */
+.tag-cloud-tags a {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 0.8rem !important;
+  padding: 0.15rem 0.7rem;
+  margin: 0.2rem 0.25rem 0.2rem 0;
+  border: 1px dashed var(--accent-color);
+  border-radius: 2px;
+  color: var(--text-color);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.tag-cloud-tags a:hover {
+  background: var(--accent-color);
+  color: #fff;
+  border-style: solid;
 }
 
 /* 文章顶部主色细线 */
@@ -41,10 +127,10 @@ a:hover { color: var(--accent-color); }
   border-top: 3px solid var(--accent-color);
 }
 
-/* 侧边栏头像圆形 + 抹茶描边 */
+/* 侧边栏头像圆形 + 雾紫描边 */
 .sidebar .avatar img {
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(111, 156, 132, 0.18);
+  box-shadow: 0 0 0 4px rgba(138, 123, 158, 0.2);
 }
 
 /* TOC 高亮用主色 */
@@ -56,4 +142,61 @@ a:hover { color: var(--accent-color); }
 /* 搜索框聚焦主色 */
 .search-input:focus {
   border-color: var(--accent-color);
+}
+
+/* ===== 首页卷首语（intro） ===== */
+.site-intro {
+  font-family: var(--font-serif);
+  text-align: center;
+  padding: 2.2rem 1.5rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  background:
+    linear-gradient(180deg, rgba(216,167,196,0.05), rgba(156,194,194,0.05));
+}
+.site-intro .intro-quote {
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  color: var(--heading-color);
+  line-height: 1.6;
+}
+.site-intro .intro-sub {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  letter-spacing: 0.04em;
+}
+
+/* ===== 复古小挂件（运行天数 / 访客计数） ===== */
+.retro-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 2rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+.retro-widgets .retro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  background: var(--card-background);
+  letter-spacing: 0.05em;
+}
+.retro-widgets .retro-badge b {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.retro-widgets .retro-badge .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--vapor-pink);
+  box-shadow: 0 0 6px var(--vapor-pink);
 }

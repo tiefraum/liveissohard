@@ -16,10 +16,9 @@ theme = "hugo-theme-stack"
     # 小工具：每个 widget 必须是 {type = "..."} 格式，放进 homepage / page 数组
     # 主题只读取 widgets.homepage（首页右栏）与 widgets.page（文章页右栏）
     [params.widgets]
-        # 首页右栏：搜索 + 分类 + 归档 + 标签云
+        # 首页右栏：搜索 + 归档 + 标签云（去掉分类）
         homepage = [
             {type = "search"},
-            {type = "categories"},
             {type = "archives"},
             {type = "tag-cloud", params = {limit = 10}},
         ]
@@ -72,12 +71,18 @@ theme = "hugo-theme-stack"
     toggle = true
     default = "auto"
 
+# 首页卷首语 + 复古挂件（since 用于计算运行天数）
+[params.profile]
+    intro = "ケーキも大好き、君も大好き"
+    introSub = "喜欢蛋糕也喜欢你"
+    since = "2026-07-11"
+
 
 # 搜索索引需要 JSON 输出
 [outputs]
     home = ["HTML", "RSS", "JSON"]
 
-# 顶部导航菜单（对齐树响集风格）
+# 顶部导航菜单
 [[menu.main]]
     name = "首页"
     url = "/"
@@ -87,13 +92,9 @@ theme = "hugo-theme-stack"
     url = "/archives/"
     weight = 2
 [[menu.main]]
-    name = "标签"
-    url = "/tags/"
-    weight = 3
-[[menu.main]]
     name = "分类"
     url = "/categories/"
-    weight = 4
+    weight = 3
 [[menu.main]]
     name = "关于"
     url = "/about/"

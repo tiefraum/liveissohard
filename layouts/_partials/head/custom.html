@@ -6,3 +6,29 @@
         {{ end }}
     {{ end }}
 {{ end }}
+
+{{/* ===== 蒸汽波 / 复古优雅 字体 ===== */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+{{/* ===== 复古挂件脚本：运行天数 + 本地访客计数 ===== */}}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 运行天数（取 config 里的建站日期，缺省用页面年份）
+    var since = {{ with .Site.Params.profile.since }}"{{ . }}"{{ else }}"2025-01-01"{{ end }};
+    var start = new Date(since);
+    var days = Math.max(0, Math.floor((Date.now() - start.getTime()) / 86400000));
+    var rd = document.getElementById("run-days");
+    if (rd) rd.textContent = days;
+
+    // 访客计数（localStorage 模拟，纯前端趣味）
+    var key = "retro_visitor_count";
+    var n = parseInt(localStorage.getItem(key) || "0", 10);
+    n = n + 1;
+    try { localStorage.setItem(key, n); } catch (e) {}
+    var vc = document.getElementById("visitor-count");
+    if (vc) vc.textContent = String(n).padStart(6, "0");
+  });
+</script>
+
