@@ -1,4 +1,25 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "tokiwa"
+baseURL = "/"
+title = "我的小站"
+languageCode = "zh-cn"
+DefaultContentLanguage = "zh-cn"
+theme = "hugo-theme-stack"
+
+# 强制开启文章目录和分页
+paginate = 5
+
+[params]
+    # 网站的主标题和副标题
+    mainSection = "post"
+    description = "这里是我的数字自留地。"
+    
+    # 日期格式
+    dateFormat = "2006-01-02"
+
+    [params.sidebar]
+        emoji = "🗂️"
+        subtitle = "务实至上"
+
+    # 颜色配置（这里给你预设了非常干净的强调色）
+    [params.colorScheme]
+        toggle = true
+        default = "auto"
