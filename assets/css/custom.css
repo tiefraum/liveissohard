@@ -1,6 +1,6 @@
 /* ===== 抹茶巧克力配色（背景绿保留） ===== */
 :root {
-  --accent-color: #6f9c84;          /* 主色：柔和抹茶绿（与背景相配） */
+  --accent-color: #678f7a;          /* 主色：柔和抹茶绿（与背景相配） */
   --accent-color-2: #9cc2b0;        /* 浅抹茶点缀 */
   --body-background: #f3f9f7;        /* 背景：极浅绿白（保留） */
   --paper-overlay: #eef6f1;          /* 纸张绿色叠加 */
@@ -19,9 +19,9 @@
 }
 
 [data-scheme="dark"] {
-  --accent-color: #b08968;          /* 主色：抹茶巧克力褐 */
+  --accent-color: #8f7a68;          /* 主色：抹茶巧克力褐 */
   --accent-color-2: #6f9c84;        /* 点缀：抹茶绿 */
-  --body-background: #1c1814;       /* 背景：深可可棕 */
+  --body-background: #584f45;       /* 背景：深可可棕 */
   --paper-overlay: #211b15;         /* 纸张深棕叠加 */
   --card-background: #2a241d;       /* 卡片：巧克力棕 */
   --card-background-selected: #352d23;
@@ -148,18 +148,22 @@ a:hover { color: var(--accent-color); }
 
 /* ===== 左栏字体整体放大 ===== */
 .sidebar.left-sidebar .site-name {
-  font-size: 1.6rem;
+  font-size: 1.7rem !important;
 }
 .sidebar.left-sidebar .site-description {
-  font-size: 1.05rem;
+  font-size: 1.1rem !important;
   opacity: 0.9;
 }
-.sidebar.left-sidebar .menu a span,
-.sidebar.left-sidebar .menu-social a {
-  font-size: 1.05rem;
+.sidebar.left-sidebar .menu a,
+.sidebar.left-sidebar .menu a span {
+  font-size: 1.1rem !important;
 }
-.sidebar.left-sidebar .menu-bottom-section {
-  font-size: 1rem;
+.sidebar.left-sidebar .menu-social a {
+  font-size: 1.1rem !important;
+}
+.sidebar.left-sidebar .menu-bottom-section,
+.sidebar.left-sidebar .menu-bottom-section span {
+  font-size: 1.05rem !important;
 }
 
 /* ===== 博文正文：舒适阅读字体 ===== */
@@ -263,8 +267,8 @@ a:hover { color: var(--accent-color); }
   margin-bottom: 2.2rem;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  /* 复古风背景：旧纸纹理 + 暖色 + 抹茶晕染 */
-  background-color: #fbf6ec;
+  /* 复古风背景：跟随主题卡片色（夜间自动变深），叠加旧纸纹理 + 暖色晕染 */
+  background-color: var(--card-background);
   background-image:
     radial-gradient(circle at 15% 20%, rgba(111,156,132,0.10), transparent 50%),
     radial-gradient(circle at 85% 80%, rgba(138,109,59,0.08), transparent 50%),
