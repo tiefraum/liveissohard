@@ -1,26 +1,26 @@
 /* ===== 抹茶巧克力配色（背景绿保留不动） ===== */
 :root {
-  --accent-color: #7a8b5a;          /* 主色：抹茶绿 */
-  --accent-color-2: #a3b18a;        /* 浅抹茶点缀 */
+  --accent-color: #6f9c84;          /* 主色：柔和抹茶绿（贴近背景青绿调） */
+  --accent-color-2: #9cc2b0;        /* 浅抹茶点缀 */
   --body-background: #f3f9f7;        /* 背景：极浅绿白（保留） */
   --card-background: #fffdf8;        /* 卡片：奶油米白 */
-  --card-background-selected: #efe9dd; /* 选中：巧克力奶泡 */
+  --card-background-selected: #e6efe9; /* 选中：浅抹茶奶 */
   --heading-color: #4a3b2a;          /* 标题：巧克力棕 */
   --text-color: #5b4d3a;             /* 正文：暖棕 */
   --link-color: #8a6d3b;             /* 链接：焦糖棕 */
-  --border-color: #e3ddcf;           /* 边框：淡可可 */
+  --border-color: #dfeae4;           /* 边框：与背景同调的淡绿 */
 }
 
 [data-scheme="dark"] {
-  --accent-color: #9caf6a;           /* 暗色：亮抹茶 */
-  --accent-color-2: #7a8b5a;
+  --accent-color: #8fbfa6;           /* 暗色：亮抹茶绿 */
+  --accent-color-2: #6f9c84;
   --body-background: #11201d;        /* 背景绿（保留） */
-  --card-background: #20231b;        /* 卡片：深可可 */
-  --card-background-selected: #2c2e24;
+  --card-background: #1c2622;        /* 卡片：深可可绿 */
+  --card-background-selected: #243330;
   --heading-color: #e7e0cf;          /* 标题：奶茶白 */
   --text-color: #cdc4b0;             /* 正文：暖灰棕 */
   --link-color: #c8a878;             /* 链接：焦糖 */
-  --border-color: #35382c;
+  --border-color: #2c3a36;
 }
 
 /* 链接 hover 用主色 */
@@ -32,7 +32,7 @@ a:hover { color: var(--accent-color); }
 .widget,
 .widget--card {
   border-radius: 14px;
-  box-shadow: 0 2px 14px rgba(122, 139, 90, 0.12);
+  box-shadow: 0 2px 14px rgba(111, 156, 132, 0.14);
   border-color: var(--border-color);
 }
 
@@ -44,7 +44,7 @@ a:hover { color: var(--accent-color); }
 /* 侧边栏头像圆形 + 抹茶描边 */
 .sidebar .avatar img {
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(122, 139, 90, 0.18);
+  box-shadow: 0 0 0 4px rgba(111, 156, 132, 0.18);
 }
 
 /* TOC 高亮用主色 */

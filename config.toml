@@ -13,26 +13,21 @@ theme = "hugo-theme-stack"
     description = "这里是我的数字自留地。"
     customCSS = ["css/custom.css"]
 
-    # 小工具（注意：每个 widget 必须是 {type = "..."} 格式，不能是纯字符串）
+    # 小工具：每个 widget 必须是 {type = "..."} 格式，放进 homepage / page 数组
+    # 主题只读取 widgets.homepage（首页右栏）与 widgets.page（文章页右栏）
     [params.widgets]
-        # 左栏（首页/列表页）下方的 widget
-        sidebar = [
+        # 首页右栏：搜索 + 分类 + 归档 + 标签云
+        homepage = [
             {type = "search"},
             {type = "categories"},
             {type = "archives"},
+            {type = "tag-cloud", params = {limit = 10}},
         ]
-        # 右栏（文章页 + 首页）的 widget：目录 + 标签云
-        [params.widgets.page]
-            [params.widgets.page.toc]
-                enabled = true
-            [params.widgets.page.tag-cloud]
-                enabled = true
-            [params.widgets.page.recent]
-                enabled = false
-        # 首页也显示右栏（含标签云），实现三栏
-        [params.widgets.homepage]
-            [params.widgets.homepage.tag-cloud]
-                enabled = true
+        # 文章页右栏：目录 + 标签云
+        page = [
+            {type = "toc"},
+            {type = "tag-cloud", params = {limit = 10}},
+        ]
 
     # 文章：开启目录、摘要
     [params.article]
