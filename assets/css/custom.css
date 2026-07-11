@@ -22,8 +22,8 @@
   --accent-color: #8f7a68;          /* 主色：抹茶巧克力褐 */
   --accent-color-2: #6f9c84;        /* 点缀：抹茶绿 */
   --body-background: #584f45;       /* 背景：深可可棕 */
-  --paper-overlay: #211b15;         /* 纸张深棕叠加 */
-  --card-background: #2a241d;       /* 卡片：巧克力棕 */
+  --paper-overlay: #1c1814;         /* 纸张深棕叠加 */
+  --card-background:#2a241d;       /* 卡片：巧克力棕 */
   --card-background-selected: #352d23;
   --heading-color: #ece2d2;         /* 标题：奶茶白 */
   --text-color: #d3c7b6;            /* 正文：暖米棕 */
@@ -53,20 +53,28 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 0.02em;
 }
 
-/* ===== 纸张纹理 + 暖色渐变（旧书页感） ===== */
+/* ===== 全站背景图：日间 bg1，夜间 bg2 ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  /* 细噪点 + 绿色调渐变叠加 */
+  /* 日间背景图 bg1，叠加一层柔和白纱保证文字可读 */
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(111, 156, 132, 0.10), transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(156, 194, 194, 0.08), transparent 50%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  background-color: var(--paper-overlay);
-  background-blend-mode: multiply;
+    linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+    url("/bg1.JPG");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* 夜间背景图 bg2，叠加深色纱 */
+[data-scheme="dark"] body::before {
+  background-image:
+    linear-gradient(rgba(20, 16, 12, 0.6), rgba(20, 16, 12, 0.6)),
+    url("/bg2.JPG");
 }
 
 /* 链接 hover 用主色 */
