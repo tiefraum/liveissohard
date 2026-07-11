@@ -1,10 +1,10 @@
 baseURL = "/"
-title = "我的小站"
+title = "果仁糖"
 languageCode = "zh-cn"
 DefaultContentLanguage = "zh-cn"
 theme = "hugo-theme-stack"
 
-# 强制开启文章分页 (新版语法)
+# 强制开启文章分页 
 [pagination]
     pagerSize = 5
 
@@ -19,8 +19,17 @@ theme = "hugo-theme-stack"
 
 [params.sidebar]
     emoji = "🗂️"
-    subtitle = "务实至上"
+    subtitle = "ケーキも大好き、君も大好き"
 
 [params.colorScheme]
     toggle = true
     default = "auto"
+
+    [params.sidebar.avatar]
+    enabled = true
+    local = true
+    src = "img/avatar.png"
+
+[params.author]
+    name = "336"
+    intro = "日啖网友三百个"
