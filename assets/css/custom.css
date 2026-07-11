@@ -1,38 +1,38 @@
-/* ===== 清爽蓝绿 / 森系配色 ===== */
+/* ===== 抹茶巧克力配色（背景绿保留不动） ===== */
 :root {
-  --accent-color: #2a9d8f;          /* 主色：森系蓝绿 */
-  --accent-color-2: #88c9bf;         /* 浅绿点缀 */
-  --body-background: #f3f9f7;        /* 背景：极浅绿白 */
-  --card-background: #ffffff;
-  --card-background-selected: #e8f4f1;
-  --heading-color: #1d3b36;
-  --text-color: #2c3e3a;
-  --link-color: #2a9d8f;
-  --border-color: #d8ebe6;
+  --accent-color: #7a8b5a;          /* 主色：抹茶绿 */
+  --accent-color-2: #a3b18a;        /* 浅抹茶点缀 */
+  --body-background: #f3f9f7;        /* 背景：极浅绿白（保留） */
+  --card-background: #fffdf8;        /* 卡片：奶油米白 */
+  --card-background-selected: #efe9dd; /* 选中：巧克力奶泡 */
+  --heading-color: #4a3b2a;          /* 标题：巧克力棕 */
+  --text-color: #5b4d3a;             /* 正文：暖棕 */
+  --link-color: #8a6d3b;             /* 链接：焦糖棕 */
+  --border-color: #e3ddcf;           /* 边框：淡可可 */
 }
 
 [data-scheme="dark"] {
-  --accent-color: #4cc9b0;
-  --accent-color-2: #2a9d8f;
-  --body-background: #11201d;
-  --card-background: #16291f;
-  --card-background-selected: #1d3b36;
-  --heading-color: #e6f4f0;
-  --text-color: #cfe3dc;
-  --link-color: #4cc9b0;
-  --border-color: #244039;
+  --accent-color: #9caf6a;           /* 暗色：亮抹茶 */
+  --accent-color-2: #7a8b5a;
+  --body-background: #11201d;        /* 背景绿（保留） */
+  --card-background: #20231b;        /* 卡片：深可可 */
+  --card-background-selected: #2c2e24;
+  --heading-color: #e7e0cf;          /* 标题：奶茶白 */
+  --text-color: #cdc4b0;             /* 正文：暖灰棕 */
+  --link-color: #c8a878;             /* 链接：焦糖 */
+  --border-color: #35382c;
 }
 
 /* 链接 hover 用主色 */
 a:hover { color: var(--accent-color); }
 
-/* 圆角 + 柔和阴影，更清爽 */
+/* 圆角 + 柔和阴影，抹茶感 */
 .article-list--compact article,
 .article,
 .widget,
 .widget--card {
   border-radius: 14px;
-  box-shadow: 0 2px 14px rgba(42, 157, 143, 0.08);
+  box-shadow: 0 2px 14px rgba(122, 139, 90, 0.12);
   border-color: var(--border-color);
 }
 
@@ -41,10 +41,10 @@ a:hover { color: var(--accent-color); }
   border-top: 3px solid var(--accent-color);
 }
 
-/* 侧边栏头像圆形 + 主色描边 */
+/* 侧边栏头像圆形 + 抹茶描边 */
 .sidebar .avatar img {
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.18);
+  box-shadow: 0 0 0 4px rgba(122, 139, 90, 0.18);
 }
 
 /* TOC 高亮用主色 */

@@ -70,7 +70,7 @@ theme = "hugo-theme-stack"
 
 [params.sidebar]
     emoji = "🌿"
-    subtitle = "这里是我的数字自留地。"
+    subtitle = "ケーキも大好き、君も大好き"
     avatar = "img/avatar.png"
 
 [params.colorScheme]
@@ -78,28 +78,32 @@ theme = "hugo-theme-stack"
     default = "auto"
 
 
-[params.author]
-    name = "336"
-    intro = "日啖网友三百个"
-
 # 搜索索引需要 JSON 输出
 [outputs]
     home = ["HTML", "RSS", "JSON"]
 
-# 顶部导航菜单
+# 顶部导航菜单（对齐树响集风格）
 [[menu.main]]
     name = "首页"
     url = "/"
     weight = 1
 [[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+[[menu.main]]
     name = "标签"
     url = "/tags/"
-    weight = 2
+    weight = 3
 [[menu.main]]
     name = "分类"
     url = "/categories/"
-    weight = 3
-[[menu.main]]
-    name = "归档"
-    url = "/archives/"
     weight = 4
+[[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 5
+[[menu.main]]
+    name = "友链"
+    url = "/links/"
+    weight = 6
