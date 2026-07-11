@@ -13,15 +13,26 @@ theme = "hugo-theme-stack"
     description = "这里是我的数字自留地。"
     customCSS = ["css/custom.css"]
 
-    # 侧边栏小工具：搜索 / 标签云 / 分类 / 归档
+    # 小工具（注意：每个 widget 必须是 {type = "..."} 格式，不能是纯字符串）
     [params.widgets]
-        sidebar = ["search", "tag-cloud", "categories", "archives"]
-        # 文章页右侧：目录
+        # 左栏（首页/列表页）下方的 widget
+        sidebar = [
+            {type = "search"},
+            {type = "categories"},
+            {type = "archives"},
+        ]
+        # 右栏（文章页 + 首页）的 widget：目录 + 标签云
         [params.widgets.page]
             [params.widgets.page.toc]
                 enabled = true
+            [params.widgets.page.tag-cloud]
+                enabled = true
             [params.widgets.page.recent]
                 enabled = false
+        # 首页也显示右栏（含标签云），实现三栏
+        [params.widgets.homepage]
+            [params.widgets.homepage.tag-cloud]
+                enabled = true
 
     # 文章：开启目录、摘要
     [params.article]
@@ -59,7 +70,7 @@ theme = "hugo-theme-stack"
 
 [params.sidebar]
     emoji = "🌿"
-    subtitle = "ケーキも大好き、君も大好き"
+    subtitle = "这里是我的数字自留地。"
     avatar = "img/avatar.png"
 
 [params.colorScheme]
